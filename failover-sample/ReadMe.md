@@ -2,8 +2,9 @@ Steps to setup AMQ-7 in your environment for the failover test:
 
 1. Create 2 brokers named "broker1" and "broker2" respectively.
 
->> ./artemis create broker1
->> ./artemis create broker2
+-- ./artemis create broker1
+
+-- ./artemis create broker2
 
 2. Add below sections to broker.xml files of both brokers:
 
@@ -57,4 +58,4 @@ Slave Config:
 
 ----------------------------------------------------------------------------------------------------------------------
 
->> Start the broker and execute this application
+-- Start the broker and execute this application

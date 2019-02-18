@@ -8,7 +8,7 @@ Steps to setup AMQ-7 in your environment for the failover test:
 
 2. Add below sections to broker.xml files of both brokers:
 
-----------------------------------------------------------------------------         
+```
 <connectors>
    <connector name="artemis">tcp://localhost:61616</connector>
    <connector name="cluster-connector">tcp://localhost:61617</connector>
@@ -29,10 +29,11 @@ Steps to setup AMQ-7 in your environment for the failover test:
     </static-connectors>
   </cluster-connection>
 </cluster-connections>
-----------------------------------------------------------------------------
+```
 
 3. Add master configuration to broker1 and slave configuration to broker2:
 
+```
 Master config:
 <ha-policy>
     <replication>
@@ -46,15 +47,19 @@ Slave Config:
         <slave/>
      </replication>
 </ha-policy>     
-         
+```
+
 4. Change ports for the acceptors in the broker2's broker.xml:
 
+```
 <acceptor name="artemis">tcp://0.0.0.0:61617?tcpSendBufferSize=1048576;tcpReceiveBufferSize=1048576;protocols=CORE,AMQP,STOMP,HORNETQ,MQTT,OPENWIRE</acceptor>
-
+```
 
 5. Change port of admin console in the broker2's bootstrap.xml file.
 
+```
  <web bind="http://localhost:8161" path="web">
+```
 
 ----------------------------------------------------------------------------------------------------------------------
 

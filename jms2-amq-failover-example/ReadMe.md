@@ -63,4 +63,6 @@ Slave Config:
 
 ----------------------------------------------------------------------------------------------------------------------
 
--- Start the broker and execute this application
+-- Start the brokers and execute this application
+
+-- Once application sent message to broker, stop master/live broker and wait for 20 seconds, application will read message from broker 2
